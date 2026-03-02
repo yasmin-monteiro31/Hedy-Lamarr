@@ -2,7 +2,7 @@ const perguntas = [
     {
       pergunta: "Ela nasceu em qual país?",
       opcoes: ["Áustria", "França", "Estados Unidos","Alemanha"],
-      resposta: 3
+      resposta: 0
     },
     {
       pergunta: "Além de atriz, ela também era:",
@@ -187,3 +187,4 @@ const perguntas = [
       </button>
     `;
   }
+
