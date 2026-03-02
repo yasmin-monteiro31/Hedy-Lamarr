@@ -90,12 +90,27 @@ const perguntas = [
   const quiz = document.getElementById("quiz");
   const nextBtn = document.getElementById("next-btn");
   const result = document.getElementById("result");
-  
-  function startQuiz() {
-    intro.classList.add("hidden");
-    quizSection.classList.remove("hidden");
-    mostrarPergunta();
+
+
+function embaralharPerguntas(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
   }
+}
+
+function startQuiz() {
+  embaralharPerguntas(perguntas); 
+  
+  perguntaAtual = 0;
+  pontuacao = 0;
+  respondeu = false;
+
+  intro.classList.add("hidden");
+  quizSection.classList.remove("hidden");
+
+  mostrarPergunta();
+}
   
   function mostrarPergunta() {
   respondeu = false;
@@ -187,4 +202,5 @@ const perguntas = [
       </button>
     `;
   }
+
   
